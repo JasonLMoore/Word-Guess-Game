@@ -21,35 +21,39 @@ document.getElementById("pokemon").innerHTML = pickPoke();
 
 document.onkeyup = function(event) {
     var playerGuess = event.key;
-    
-    console.log(playerGuess)
-    console.log(lettersGuessed)
-    
+
     var letterLocation = function() {
-       var alphaSpot = lettersGuessed.indexOf(playerGuess);
-       return alphaSpot;
+        var alphaSpot = lettersGuessed.indexOf(playerGuess);
+        return alphaSpot;
     };
-    console.log(letterLocation())
     
     var addLetter = function () {
         var newLettersGuessed = lettersGuessed.push(playerGuess);
         return newLettersGuessed;
     };
-    console.log(addLetter())
     
-
-
+    var checkLetters = function() {
+        if (letterLocation() === -1){
+            addLetter();
+            
+        } else {
+            console.log("Sorry. This letter has already been guessed.")
+        }
+        
+    };
+    checkLetters()
+    document.getElementById("letters-guessed").innerHTML = lettersGuessed;
     
-    //var addGuess = function () {
-        //if letterLocation() = -1 {
-            //lettersGuessed.push(playerGuess);
-            //} else {
-                //console.log("Sorry. Letter already guessed.");
-            //}
-                
-        //};
-    //};
 };
+
+    
+    
+    
+    
+    
+    
+    
+    
     
     
             
