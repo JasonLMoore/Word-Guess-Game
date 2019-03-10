@@ -25,24 +25,31 @@ document.onkeyup = function(event) {
     console.log(playerGuess)
     console.log(lettersGuessed)
     
-    
-    
     var letterLocation = function() {
        var alphaSpot = lettersGuessed.indexOf(playerGuess);
        return alphaSpot;
     };
     console.log(letterLocation())
+    
+    var addLetter = function () {
+        var newLettersGuessed = lettersGuessed.push(playerGuess);
+        return newLettersGuessed;
+    };
+    console.log(addLetter())
+    
+
 
     
     //var addGuess = function () {
-        //if (letterGuessPosition(userGuess) = lettersGuessed[-1]) {
+        //if letterLocation() = -1 {
             //lettersGuessed.push(playerGuess);
             //} else {
                 //console.log("Sorry. Letter already guessed.");
             //}
                 
         //};
-    };
+    //};
+};
     
     
             
